@@ -1,0 +1,7 @@
+﻿Courses:
+- Understanding Machine Learning - Shai Ben David (University of Waterloo)	
+	* https://www.youtube.com/playlist?list=PLFze15KrfxbH8SE4FgOHpMSY1h5HiRLMm
+- Machine Learning - Yossi Keshet (Bar Ilan University)
+	* https://www.youtube.com/watch?v=MtHtCYNfuEs&list=PLM96W_EHEqh7QUKH_z-z-2muKa42n0zpK
+
+
