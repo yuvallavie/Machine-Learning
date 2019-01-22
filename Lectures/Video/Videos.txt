@@ -3,14 +3,16 @@
 	* https://www.youtube.com/playlist?list=PLFze15KrfxbH8SE4FgOHpMSY1h5HiRLMm
 - Machine Learning - Yossi Keshet (Bar Ilan University)
 	* https://www.youtube.com/watch?v=MtHtCYNfuEs&list=PLM96W_EHEqh7QUKH_z-z-2muKa42n0zpK
-- Convolutional Neural Networks for Visual Recognition (Stanford) 
+- Convolutional Neural Networks for Visual Recognition (Stanford) <- recommend
 	* http://cs231n.stanford.edu/
 	* https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv
-- Machine Learning, with math proofs :) (Stanford)
+- Machine Learning, WITH ACTUAL MATH PROOFS :) (Stanford)
 	* http://cs229.stanford.edu/
 	* https://www.youtube.com/watch?v=UzxYlbK2c7E&list=PLA89DCFA6ADACE599
-
--Dalex - guide
+- Machine learning GOOGLE crash course - basic but you get to use TensorFlow + at the end there is a link to more google courses
+	* https://developers.google.com/machine-learning/crash-course/ml-intro
+	
+-Dalex - Variable importance and model "explainer" package (another package is LIME) 
 	* https://www.youtube.com/watch?v=vPxQpMCnPE0
 	* https://pbiecek.github.io/DALEX/
 
