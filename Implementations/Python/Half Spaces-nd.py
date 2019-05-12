@@ -6,7 +6,7 @@
                 # Surrogate Loss - Hinge Loss = max(0,1-(f(x_i)*y)
                 # f(x_i) = {-1,1}
                 # The Realizeable Case
-                # m(e,d) = 
+                # m(e,d) = VC-Dimension + LOG(1/delta) / epsilon
 # ----------------------------------------------------------
 #%% Imports
 import numpy as np                

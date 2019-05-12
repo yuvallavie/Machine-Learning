@@ -1,0 +1,371 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Proofs for Probability
+\end_layout
+
+\begin_layout Author
+Yuval Lavie
+\end_layout
+
+\begin_layout Section
+Concentration Inequalities
+\end_layout
+
+\begin_layout Subsection
+Markov's Inequality
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X:\Omega\rightarrow\mathbb{R}|X\geq0$
+\end_inset
+
+ be a non-negative random variable on a Probability Triple 
+\begin_inset Formula $(\Omega,\mathbb{F},P)$
+\end_inset
+
+ and let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a strictly increasing non-negative function then:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall\alpha>0:P\big[X\geq\alpha\big]\leq\dfrac{E[X]}{\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall\alpha>0:P\big[X\geq\alpha\big]=P\big[f(X)\geq f(\alpha)\big]\leq\dfrac{E[f(X)]}{f(\alpha)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+PROOF:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $E\big[X\big]=\int_{0}^{\infty}x\cdot f_{X}(x)dx=\int_{0}^{\alpha}x\cdot f_{X}(x)dx+\int_{\alpha}^{\infty}x\cdot f_{X}(x)dx\geq\int_{\alpha}^{\infty}x\cdot f_{X}(x)dx\geq\int_{\alpha}^{\infty}\alpha\cdot f_{X}(x)dx\geq\alpha P(X\geq\alpha)\implies\dfrac{E\big[X\big]}{\alpha}\geq P(X\geq\alpha)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Chernoff's Bound
+\end_layout
+
+\begin_layout Standard
+As a special case of Markov's Inequality, let 
+\begin_inset Formula $f(x)=e^{t\cdot x}$
+\end_inset
+
+then:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall\alpha>0:P\big[X\geq\alpha\big]\leq\dfrac{E[e^{t\cdot X}]}{e^{t\cdot\alpha}}=\dfrac{M_{X}(t)}{e^{t\cdot\alpha}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Chebyshev's Inequality
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X:\Omega\rightarrow\mathbb{R}$
+\end_inset
+
+ be a random variable on a Probability Triple 
+\begin_inset Formula $(\Omega,\mathbb{F},P)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu=E\big[X\big]<\infty,Var\big[X\big]=\sigma^{2}:0<\sigma^{2}<\infty$
+\end_inset
+
+ then:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall k>0:P\bigg(\big|X-E\big[X\big]\big|\geq k\cdot\sigma_{X}\bigg)\leq\dfrac{1}{k^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Interpertation : 
+\begin_inset Formula $\forall k>0:P\bigg(\big|X-E\big[X\big]\big|\leq k\cdot\sigma_{X}\bigg)=P\bigg(E\big[X\big]-k\cdot\sigma_{X}\leq X\leq E\big[X\big]+k\cdot\sigma_{X}\bigg)\geq1-\dfrac{1}{k^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Hoeffding's Inequality
+\end_layout
+
+\begin_layout Subsubsection
+Independent Equally-Distributed RN's
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\{X_{i}\}_{i=1}^{n}$
+\end_inset
+
+be a series of n independent equally distributed random variables such that
+ 
+\begin_inset Formula $\forall i\in n,\forall a,b\in\mathbb{R}:a<b\rightarrow P\big(a\leq X_{i}\leq b)=1$
+\end_inset
+
+ then:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\bigg(\overline{X_{n}}-E\big[X]\geq\epsilon\bigg)\leq e^{\dfrac{2\text{n}\epsilon^{2}}{b-a}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+General Theorems
+\end_layout
+
+\begin_layout Subsection
+The Law of Large Numbers
+\end_layout
+
+\begin_layout Standard
+The Law of Large Numbers (LLN) is a theorem that describes the result of
+ performing the same experiment a large number of times.
+ According to the law, the average of the results obtained from a large
+ number of trials should be close to the expected value, and will tend to
+ become closer as more trials are performed.
+\end_layout
+
+\begin_layout Subsection
+The Weak Law of Large Numbers
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(X_{n})_{n=1}^{\infty}$
+\end_inset
+
+be an infinite series of uncorrelated random variables 
+\begin_inset Formula $\bigg[\forall i,j\in n:COV(X_{i},X_{j})=0\bigg]$
+\end_inset
+
+ on a Probability Triple 
+\begin_inset Formula $(\Omega,\mathbb{F},P)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\forall X_{n}:\exists E\big[X_{n}^{2}]$
+\end_inset
+
+ and we define
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\overline{X_{n}}=\dfrac{X_{1}+X_{2}+\cdots+X_{n}}{n}=\dfrac{1}{n}\sum_{k=1}^{n}X_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\overline{X_{n}}$
+\end_inset
+
+ has the following properties:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E\big[\overline{X_{n}}]=\dfrac{1}{n}\sum_{k=1}^{\infty}E\big[X_{k}\big]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Var\big[\overline{X_{n}}\big]=\dfrac{1}{n^{2}}\sum_{k=1}^{\infty}Var\big[X_{k}\big]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+PROOF:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E\big[\overline{X_{n}}]=E\big[\dfrac{1}{n}\sum_{k=1}^{\infty}X_{k}]=\dfrac{1}{n}\sum_{k=1}^{\infty}E[X_{k}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Var\big[\overline{X_{n}}\big]=Var\bigg[\dfrac{1}{n}\sum_{k=1}^{\infty}X_{k}\bigg]\overset{*}{=}\dfrac{1}{n^{2}}Var\bigg[\sum_{k=1}^{\infty}X_{k}\bigg]\overset{**}{=}\dfrac{1}{n^{2}}\sum_{k=1}^{\infty}Var\big[X_{k}\big]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Clarifications:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $*Var(\alpha X)=\alpha^{2}Var(X)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $**Var\big(\sum_{k=1}^{N}X_{k}\big)=\sum_{k=1}^{N}Var(\sum_{k=1}^{N}X_{k}\big)+\sum_{k,j=1,i\neq j}^{N}Cov\big(X_{k},X_{j}\big)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

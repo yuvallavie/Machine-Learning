@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -21,13 +21,25 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\use_hyperref false
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -49,6 +61,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -57,7 +70,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -120,15 +136,6 @@ Tom Mitchell - A computer program is said to learn from experience
 
 \end_layout
 
-\begin_deeper
-\begin_layout Enumerate
-\begin_inset Formula $L=(T,E,P):lim_{E_{t}\rightarrow\infty}[P_{t}]=\infty$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \begin_layout Part
 Learning
 \end_layout
@@ -521,7 +528,7 @@ Measures:
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $L_{S}(h)=\mathbb{P}_{(x,y)\in S}[h(x)\neq y]=\dfrac{|\{(x_{i},y_{i})\in S:y_{i}\neq h(x_{i})\}|}{m}$
+\begin_inset Formula $L_{S}(h)=\mathbb{P}_{(x,y)\in S}[h(x)\neq y]=\dfrac{|\{(x_{i},y_{i})\in S:y_{i}\neq h(x_{i})\}|}{|S|}$
 \end_inset
 
  - An estimator to the real error.
@@ -740,7 +747,7 @@ Probably Approximately Correct (PAC) Learning
 \begin_inset Formula $\epsilon$
 \end_inset
 
-and probability of failure 
+ and probability of failure 
 \begin_inset Formula $\delta$
 \end_inset
 
@@ -818,6 +825,284 @@ A hypothesis class
 \begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta)\rightarrow\mathbb{P}\big[L_{\mathbb{D}}(A(S))\leq min_{h\in H}\big[L_{\mathbb{D}}(h)\big]+\epsilon\big]>1-\delta$
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsection
+Agnostic PAC Learning for General Loss Function
+\end_layout
+
+\begin_layout Enumerate
+Loss Function - 
+\begin_inset Formula $l:H\times Z\rightarrow R_{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Risk - 
+\begin_inset Formula $L_{D}(h)=\mathbb{E}_{z\sim\mathbb{D}}[l(h,z)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A hypothesis class is agnostic PAC learnable with respect to a set 
+\begin_inset Formula $Z$
+\end_inset
+
+ and a loss function 
+\begin_inset Formula $l:H\times Z\rightarrow R_{+}$
+\end_inset
+
+, if there exist a function 
+\begin_inset Formula $m_{H}(\epsilon,\delta):(0,1)^{2}\rightarrow\mathbb{N}$
+\end_inset
+
+, an I.I.D sample space 
+\begin_inset Formula $S$
+\end_inset
+
+ and a learning algorithm 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+such that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall Z\sim\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta)\rightarrow\mathbb{P}\big[L_{\mathbb{D}}(A(S))\leq min_{h\in H}\big[L_{\mathbb{D}}(h)\big]+\epsilon\big]>1-\delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Uniform Convergence Learnability
+\end_layout
+
+\begin_layout Standard
+The ERM rule is an agnostic pac learner if a training sample is representative
+ of the data.
+\end_layout
+
+\begin_layout Enumerate
+A training set 
+\begin_inset Formula $S$
+\end_inset
+
+ is called 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+-representative with respect to domain 
+\begin_inset Formula $Z$
+\end_inset
+
+, hypothesis class 
+\begin_inset Formula $H$
+\end_inset
+
+,loss function 
+\begin_inset Formula $l$
+\end_inset
+
+, and distribution 
+\begin_inset Formula $D$
+\end_inset
+
+ if
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall h\in H,|L_{S}(h)-L_{D}(h)|<\epsilon$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+if a sample is 
+\begin_inset Formula $\dfrac{\epsilon}{2}$
+\end_inset
+
+-representative then any output of 
+\begin_inset Formula $ERM_{H}(S)$
+\end_inset
+
+, namely any 
+\begin_inset Formula $h_{S}\in argmin_{h\in H}\big[L_{S}(h)\big]$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $L_{D}(h_{s})\leq min_{h\in H}\big[L_{D}(h)\big]+\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $L_{D}(h_{S})\overset{\dfrac{\epsilon}{2}-Representative}{\leq}L_{S}(h_{S})+\dfrac{\epsilon}{2}\overset{h_{S}=\underset{h\in H}{argmin}\big[L_{S}(h)\big]}{\leq}L_{S}(h)+\dfrac{\epsilon}{2}\overset{\dfrac{\epsilon}{2}-Representative}{\leq}L_{D}(h)+\epsilon$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A hypothesis class 
+\begin_inset Formula $H$
+\end_inset
+
+ has the Uniform Convergence Property (W.R.T to domain 
+\begin_inset Formula $Z$
+\end_inset
+
+ and a loss function 
+\begin_inset Formula $l$
+\end_inset
+
+) if
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall Z\sim D\exists m_{H}^{UC}:(0,1)^{2}\rightarrow\mathbb{N}:|S|>m_{H}^{UC}\rightarrow P\big[|L_{S}(h)-L_{D}(h)|\leq\epsilon\big]>1-\delta$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+There Is No Universal Learner (No Free Lunch Theorem)
+\end_layout
+
+\begin_layout Section
+Sample Complexity
+\end_layout
+
+\begin_layout Enumerate
+Every finite hypothesis class is PAC Learnable with sample complexity of
+ 
+\begin_inset Formula $m_{H}(\epsilon,\delta)\leq\left\lceil \dfrac{log(|H|/\delta)}{\epsilon}\right\rceil $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\delta\leq|H|e^{-\epsilon m}\rightarrow\dfrac{\delta}{|H|}\leq e^{-\epsilon m}\rightarrow log(\dfrac{\delta}{|H|})\leq-\epsilon m\rightarrow-\dfrac{log(\dfrac{\delta}{|H|})}{\epsilon}\geq m\rightarrow m>\dfrac{log(\dfrac{|H|}{\delta})}{\epsilon}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Every finite hypothesis class enjoys the Uniform Convergence property with
+ sample complexity of 
+\begin_inset Formula $m_{H}^{UC}(\epsilon,\delta)\leq\left\lceil \dfrac{log(2|H|/\delta)}{2\epsilon^{2}}\right\rceil $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Glossary
+\end_layout
+
+\begin_layout Enumerate
+ERM - Empirical Risk Minimization : Creating a predictor that minimizes
+ the error on the training sample.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{S}(h)$
+\end_inset
+
+ - Empirical Error Rate : The rate of error a predictor has on a training
+ sample.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{(d,f)}(h)$
+\end_inset
+
+ - Risk / True Error Rate : The rate of error a predictor has on the distributio
+n and labeling function.
+\end_layout
+
+\begin_layout Enumerate
+Overfitting - A hypothesis fits the training data too well and fails on
+ the real data.
+ 
+\begin_inset Formula $L_{S}(h)=0,L_{(d,f)}(h)>\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Inductive Bias - Choosing a specific Hypothesis Class before seeing the
+ data.
+\end_layout
+
+\begin_layout Enumerate
+Learner's Failure - 
+\begin_inset Formula $L_{D}(h_{s})>\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Learner's Success - 
+\begin_inset Formula $L_{D}(h_{s})<\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $m_{H}(\epsilon,\delta)$
+\end_inset
+
+ - function that returns the number of I.I.D samples required to learn a predictor
+ with accuracy 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ and probability of failure 
+\begin_inset Formula $\delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A sample 
+\begin_inset Formula $S$
+\end_inset
+
+ is Epsilon-Representative if and only if 
+\begin_inset Formula $|L_{S}(h)-L_{D}(h)|<\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

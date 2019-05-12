@@ -1,0 +1,1114 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Machine Learning
+\end_layout
+
+\begin_layout Author
+Yuval Lavie
+\end_layout
+
+\begin_layout Part
+What is Machine Learning
+\end_layout
+
+\begin_layout Enumerate
+Arthur Samuel - A field of study that gives computers the ability to learn
+ without being explictly programmed.
+\end_layout
+
+\begin_layout Enumerate
+Shai Ben David - A field of study that gives computers the ability to create
+ expertise from experience.
+\end_layout
+
+\begin_layout Enumerate
+Tom Mitchell - A computer program is said to learn from experience 
+\begin_inset Formula $E$
+\end_inset
+
+ with respect to some task 
+\begin_inset Formula $T$
+\end_inset
+
+ and some performance measure 
+\begin_inset Formula $P$
+\end_inset
+
+ if its performance on 
+\begin_inset Formula $T$
+\end_inset
+
+ as measured by 
+\begin_inset Formula $P$
+\end_inset
+
+ improves with experience 
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Learning
+\end_layout
+
+\begin_layout Section
+Types of Learning
+\end_layout
+
+\begin_layout Enumerate
+Supervised Learning - A set of answers is available to the learner, and
+ by using these answers he is supposed to create an expertise and answer
+ new questions.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+An E-Mail spam program receives a bunch of emails labeled as {Spam/Not Spam}
+ from the user, and uses them to try and label a new received email.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Unsupervised Learning - A set of data is available to the learner, and by
+ using this data the learner must create knowledge.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+An E-Mail anomaly detection program receives a bunch of emails and tries
+ to label some of them as unusual.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Reinforcement Learning - Learning more information on the test examples
+ than exists in the training examples
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+An E-Mail spam program receives a bunch of emails labeled as spam from the
+ user, and tries to label new emails as spam and also identify malicious
+ senders.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Active learning - Interacting with the environment at training time
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+An E-Mail spam program actively asking the user to label new emails as {Spam/Not
+ Spam} or even generates new emails itself to try and learn the users preference
+s
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Passive learning - Learning only by observing the environment
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+An E-Mail spam program can only wait to observe the user's actions on certain
+ emails and use that information to decide.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Online Learning - The learner has to respond throughout the learning process.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+A stock broker has to make daily decisions based on the experience he collected.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Batch Learning - The learner can output a result only after he had a chance
+ to process a large amount of data
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+A data miner will process a huge database before outputing conclusions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mathematical Frameworks
+\end_layout
+
+\begin_layout Subsection
+The Realizeable Case
+\end_layout
+
+\begin_layout Standard
+We assume that there really exists a deterministic function that defines
+ the labeling for the entire domain space and we wish to find that function
+ or to approximate it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\mathbb{X\sim D}$
+\end_inset
+
+ s.t.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Domain (Feature) Space : 
+\begin_inset Formula $\mathbb{X}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Probability Distribution : 
+\begin_inset Formula $\mathbb{D}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Label Set : 
+\begin_inset Formula $\mathbb{Y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\exists f:\mathbb{X}\rightarrow\mathbb{Y}|\forall i:f(x_{i})=y_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Input:
+\end_layout
+
+\begin_layout Enumerate
+Training data: 
+\begin_inset Formula $S\sim\mathbb{D}^{m}=:(X\times Y)^{m}=\{(x_{1},y_{1}),...(x_{m},y_{m})\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb{H}$
+\end_inset
+
+- Hypothesis class
+\end_layout
+
+\begin_layout Standard
+Output:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $h:X\rightarrow Y$
+\end_inset
+
+ - A predictor function that labels each instance 
+\begin_inset Formula $x\in\mathbb{X}$
+\end_inset
+
+ with a label 
+\begin_inset Formula $y\in\mathbb{Y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Measures:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{(\mathbb{D},f)}(h)=\mathbb{P}_{x\in\mathbb{X}}[h(x_{i})\neq y_{i}]$
+\end_inset
+
+ - a measure of error for the predictor on the real data.
+ cannot be calculated because the learner does not know the distribution
+ or the labeling function.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{S}(h)=\mathbb{P}_{(x,y)\in S}[h(x)\neq y]=\dfrac{|\{(x_{i},y_{i})\in S:y_{i}\neq h(x_{i})\}|}{|S|}$
+\end_inset
+
+ - An estimator to the real error.
+ 
+\end_layout
+
+\begin_layout Subsection
+The Non-Realizeable Case
+\end_layout
+
+\begin_layout Standard
+We assume that the labels are also generated by a random process, in this
+ scenario two instances of the same values can have a different label!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $(\mathbb{X},\mathbb{Y})\sim\mathbb{D}$
+\end_inset
+
+ s.t.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Domain (Feature) Space : 
+\begin_inset Formula $\mathbb{X}\sim\mathbb{D}_{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Label Space :
+\begin_inset Formula $\mathbb{Y}\sim\mathbb{D}_{y|x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Probability Distribution : 
+\begin_inset Formula $\mathbb{D}_{X,Y}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Input:
+\end_layout
+
+\begin_layout Enumerate
+Training data: 
+\begin_inset Formula $S\sim\mathbb{D}^{m}=:(X\times Y)^{m}=\{(x_{1},y_{1}),...(x_{m},y_{m})\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb{H}$
+\end_inset
+
+- Hypothesis class
+\end_layout
+
+\begin_layout Standard
+Output:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $h:X\rightarrow Y$
+\end_inset
+
+ - A predictor function that labels each instance 
+\begin_inset Formula $x\in\mathbb{X}$
+\end_inset
+
+ with a label 
+\begin_inset Formula $y\in\mathbb{Y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Measures:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{(\mathbb{D},f)}(h)=\mathbb{P}_{(x,y)\sim\mathbb{D}}[h(x)\neq y]$
+\end_inset
+
+ - a measure of error for the predictor on the real data.
+ cannot be calculated because the learner does not know the distribution
+ or the labeling function.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{S}(h)=\mathbb{P}_{(x,y)\in S}[h(x)\neq y]=\dfrac{|\{(x_{i},y_{i})\in S:y_{i}\neq h(x_{i})\}|}{m}$
+\end_inset
+
+ - An estimator to the real error.
+\end_layout
+
+\begin_layout Section
+Empirical Risk Minimization
+\end_layout
+
+\begin_layout Standard
+We would like to minimize our learners error over the real domain set, but
+ we do not know the distribution of the domain.
+\end_layout
+
+\begin_layout Enumerate
+Realizable Case : 
+\begin_inset Formula $\mathbb{D},f$
+\end_inset
+
+ are not known
+\end_layout
+
+\begin_layout Enumerate
+Unrealizeable Case (Agnostic) : 
+\begin_inset Formula $\mathbb{D}_{X,Y}$
+\end_inset
+
+ is unknown
+\end_layout
+
+\begin_layout Standard
+We therefore try to minimize the empirical error on the training set.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $ERM_{H}(S)\in argmin_{h\in H}\bigg[L_{S}(h)\bigg]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Probably Approximately Correct (PAC) Learning
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\delta$
+\end_inset
+
+- The probability to get a misleading sample
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\epsilon$
+\end_inset
+
+- The accuracy of the learner
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $m_{H}(\epsilon,\delta)$
+\end_inset
+
+- function that returns the number of I.I.D samples required to learn a predictor
+ with accuracy 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ and probability of failure 
+\begin_inset Formula $\delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Realizable PAC Learning
+\end_layout
+
+\begin_layout Standard
+A hypothesis class 
+\begin_inset Formula $H$
+\end_inset
+
+ is PAC learnable if there exists a function 
+\begin_inset Formula $m_{H}:(0,1)^{2}\rightarrow\mathbb{N}$
+\end_inset
+
+, a learning algorithm 
+\begin_inset Formula $A$
+\end_inset
+
+, an unknown distribution 
+\begin_inset Formula $\mathbb{D}$
+\end_inset
+
+ and a realizable true labeling function 
+\begin_inset Formula $f:X\rightarrow Y$
+\end_inset
+
+ and an I.I.D sample space 
+\begin_inset Formula $S$
+\end_inset
+
+ such that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta)\rightarrow\mathbb{P}\big[L_{(\mathbb{D},f)}(A(S))\leq\epsilon\big]>1-\delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Agnostic PAC Learning
+\end_layout
+
+\begin_layout Standard
+A hypothesis class 
+\begin_inset Formula $H$
+\end_inset
+
+ is agnostic PAC learnable if there exists a function 
+\begin_inset Formula $m_{H}:(0,1)^{2}\rightarrow\mathbb{N}$
+\end_inset
+
+, a learning algorithm 
+\begin_inset Formula $A$
+\end_inset
+
+, an unknown distribution 
+\begin_inset Formula $\mathbb{D}_{(x,y)}$
+\end_inset
+
+ and an I.I.D Sample Space 
+\begin_inset Formula $S$
+\end_inset
+
+ such that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta)\rightarrow\mathbb{P}\big[L_{\mathbb{D}}(A(S))\leq min_{h\in H}\big[L_{\mathbb{D}}(h)\big]+\epsilon\big]>1-\delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Agnostic PAC Learning for General Loss Function
+\end_layout
+
+\begin_layout Enumerate
+Loss Function - 
+\begin_inset Formula $l:H\times Z\rightarrow R_{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Risk - 
+\begin_inset Formula $L_{D}(h)=\mathbb{E}_{z\sim\mathbb{D}}[l(h,z)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A hypothesis class is agnostic PAC learnable with respect to a set 
+\begin_inset Formula $Z$
+\end_inset
+
+ and a loss function 
+\begin_inset Formula $l:H\times Z\rightarrow R_{+}$
+\end_inset
+
+, if there exist a function 
+\begin_inset Formula $m_{H}(\epsilon,\delta):(0,1)^{2}\rightarrow\mathbb{N}$
+\end_inset
+
+, an I.I.D sample space 
+\begin_inset Formula $S$
+\end_inset
+
+ and a learning algorithm 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+such that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall Z\sim\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta)\rightarrow\mathbb{P}\big[L_{\mathbb{D}}(A(S))\leq min_{h\in H}\big[L_{\mathbb{D}}(h)\big]+\epsilon\big]>1-\delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Uniform Convergence Learnability
+\end_layout
+
+\begin_layout Standard
+The ERM rule is an agnostic pac learner if a training sample is representative
+ of the data.
+\end_layout
+
+\begin_layout Enumerate
+A training set 
+\begin_inset Formula $S$
+\end_inset
+
+ is called 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+-representative with respect to domain 
+\begin_inset Formula $Z$
+\end_inset
+
+, hypothesis class 
+\begin_inset Formula $H$
+\end_inset
+
+,loss function 
+\begin_inset Formula $l$
+\end_inset
+
+, and distribution 
+\begin_inset Formula $D$
+\end_inset
+
+ if
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall h\in H,|L_{S}(h)-L_{D}(h)|<\epsilon$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+if a sample is 
+\begin_inset Formula $\dfrac{\epsilon}{2}$
+\end_inset
+
+-representative then any output of 
+\begin_inset Formula $ERM_{H}(S)$
+\end_inset
+
+, namely any 
+\begin_inset Formula $h_{S}\in argmin_{h\in H}\big[L_{S}(h)\big]$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $L_{D}(h_{s})\leq min_{h\in H}\big[L_{D}(h)\big]+\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $L_{D}(h_{S})\overset{\dfrac{\epsilon}{2}-Representative}{\leq}L_{S}(h_{S})+\dfrac{\epsilon}{2}\overset{h_{S}=\underset{h\in H}{argmin}\big[L_{S}(h)\big]}{\leq}L_{S}(h)+\dfrac{\epsilon}{2}\overset{\dfrac{\epsilon}{2}-Representative}{\leq}L_{D}(h)+\epsilon$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A hypothesis class 
+\begin_inset Formula $H$
+\end_inset
+
+ has the Uniform Convergence Property (W.R.T to domain 
+\begin_inset Formula $Z$
+\end_inset
+
+ and a loss function 
+\begin_inset Formula $l$
+\end_inset
+
+) if
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall Z\sim D\exists m_{H}^{UC}:(0,1)^{2}\rightarrow\mathbb{N}:|S|>m_{H}^{UC}\rightarrow P\big[|L_{S}(h)-L_{D}(h)|\leq\epsilon\big]>1-\delta$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+There Is No Universal Learner (No Free Lunch Theorem)
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+Sample Complexity
+\end_layout
+
+\begin_layout Enumerate
+Every finite hypothesis class is PAC Learnable with sample complexity of
+ 
+\begin_inset Formula $m_{H}(\epsilon,\delta)\leq\left\lceil \dfrac{log(|H|/\delta)}{\epsilon}\right\rceil $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\delta\leq|H|e^{-\epsilon m}\rightarrow\dfrac{\delta}{|H|}\leq e^{-\epsilon m}\rightarrow log(\dfrac{\delta}{|H|})\leq-\epsilon m\rightarrow-\dfrac{log(\dfrac{\delta}{|H|})}{\epsilon}\geq m\rightarrow m>\dfrac{log(\dfrac{|H|}{\delta})}{\epsilon}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Every finite hypothesis class enjoys the Uniform Convergence property with
+ sample complexity of 
+\begin_inset Formula $m_{H}^{UC}(\epsilon,\delta)\leq\left\lceil \dfrac{log(2|H|/\delta)}{2\epsilon^{2}}\right\rceil $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Glossary
+\end_layout
+
+\begin_layout Enumerate
+ERM - Empirical Risk Minimization : Creating a predictor that minimizes
+ the error on the training sample.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{S}(h)$
+\end_inset
+
+ - Empirical Error Rate : The rate of error a predictor has on a training
+ sample.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{(d,f)}(h)$
+\end_inset
+
+ - Risk / True Error Rate : The rate of error a predictor has on the distributio
+n and labeling function.
+\end_layout
+
+\begin_layout Enumerate
+Overfitting - A hypothesis fits the training data too well and fails on
+ the real data.
+ 
+\begin_inset Formula $L_{S}(h)=0,L_{(d,f)}(h)>\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Inductive Bias - Choosing a specific Hypothesis Class before seeing the
+ data.
+\end_layout
+
+\begin_layout Enumerate
+Learner's Failure - 
+\begin_inset Formula $L_{D}(h_{s})>\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Learner's Success - 
+\begin_inset Formula $L_{D}(h_{s})<\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $m_{H}(\epsilon,\delta)$
+\end_inset
+
+ - function that returns the number of I.I.D samples required to learn a predictor
+ with accuracy 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ and probability of failure 
+\begin_inset Formula $\delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A sample 
+\begin_inset Formula $S$
+\end_inset
+
+ is Epsilon-Representative if and only if 
+\begin_inset Formula $|L_{S}(h)-L_{D}(h)|<\epsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
