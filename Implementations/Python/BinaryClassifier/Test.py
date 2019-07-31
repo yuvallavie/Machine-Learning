@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Visualize the result
-def getLineFromSGD(W,bias,X):
+def LinearSeparator(W,bias,X):
      return np.inner(-(W[0]/W[1]),X) - bias/W[1];
 #%%
 # Create mock separable realizable data
@@ -56,13 +56,13 @@ plt.title("Separable Case (Perceptron , LP), Non-Separable (SGD)")
 ls = np.linspace(np.min(X),np.max(X));
 
 # Plot the Linear Programming solution
-plt.plot(ls,getLineFromSGD(Wlp,Wlp[2],ls),label='Linear Programming')
+plt.plot(ls,LinearSeparator(Wlp,Wlp[2],ls),label='Linear Programming')
 
 # Plot the Perceptron solution
-plt.plot(ls,getLineFromSGD(Wp,Wp[2],ls),label='Perceptron')
+plt.plot(ls,LinearSeparator(Wp,Wp[2],ls),label='Perceptron')
 
 # Plot the Stochastic Gradient Descent solution
-plt.plot(ls,getLineFromSGD(Wsgd[0],Wsgd[1],ls),label='SGD')
+plt.plot(ls,LinearSeparator(Wsgd[0],Wsgd[1],ls),label='SGD')
 
 plt.legend(loc='upper left')
 plt.xlabel("X1")
