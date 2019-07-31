@@ -1,0 +1,1424 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Measurement Theory
+\end_layout
+
+\begin_layout Author
+Yuval Lavie
+\end_layout
+
+\begin_layout Part
+Motivation
+\end_layout
+
+\begin_layout Standard
+We would like to generalize the concept of Length by defining the following
+ function.
+\end_layout
+
+\begin_layout Section
+Definition : Generalization of Length.
+\end_layout
+
+\begin_layout Standard
+Let:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\subseteq\mathbb{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\gamma\in\mathbb{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $B=\underset{n\geq1}{\bigcup}B_{i}:B_{i}\subseteq\mathbb{R},\forall j,k\in\mathbb{N}_{1}:j\neq k\rightarrow B_{j}\cap B_{k}=\phi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\lambda$
+\end_inset
+
+ assigns non negative values to any subset of the space.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\lambda:\mathbb{P}(\Omega)\rightarrow R^{+}\cup\{+\infty\}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\lambda$
+\end_inset
+
+ assigns the natural length to an interval
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall a,b\in\mathbb{R}:b>a\rightarrow\lambda\bigg[(a,b)\bigg]=b-a$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is Invariant to translation
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall A\forall\gamma\rightarrow\lambda\bigg[A+\gamma\bigg]=\lambda\bigg[A\bigg]$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\lambda$
+\end_inset
+
+ assigns the sums of its values to disjoint sets
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\lambda(B)=\underset{n\geq1}{\sum}\lambda(B_{i})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+A Negative result in measure theory
+\end_layout
+
+\begin_layout Standard
+It is impossible to define a function that will act as a measure as defined
+ above, one of the following options have to be considered.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\lambda$
+\end_inset
+
+ only assigns non negative values to some subsets of the space.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\lambda:\mathbb{\bigg[\mathbb{F}\subset P}(\Omega)\bigg]\rightarrow R^{+}\cup\{+\infty\}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is variant to translation
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall A\forall\gamma\rightarrow\lambda\bigg[A+\gamma\bigg]\neq\lambda\bigg[A\bigg]$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\lambda$
+\end_inset
+
+ does not assigns the sums of its values to disjoint sets
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\lambda(B)\neq\underset{n\geq1}{\sum}\lambda(B_{i})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The axioms of Zermelo-Fraenkel set theory with the Axiom of uncountable
+ choice may have to be changed.
+\end_layout
+
+\begin_layout Standard
+Such function will never be sigma additive and we will choose the first
+ option and try to minimize our domain.
+\end_layout
+
+\begin_layout Part
+Algebras and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-Alegbras
+\end_layout
+
+\begin_layout Section
+Semi Algebra
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space then 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ is a family of subgroups of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and is called a Semi Algebra if and only if:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\phi\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A,B\in\mathbb{F}\exists(C_{i})_{i=1}^{n}\subseteq\mathbb{F},C_{i}\cap C_{j}=\phi:A\setminus B=\stackrel[i=1]{n}{\bigcup}C_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A,B\in\mathbb{F}\rightarrow A\cup B\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Algebra
+\end_layout
+
+\begin_layout Subsection
+Definition
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space then 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ is a family of subgroups of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and is called an Algebra if and only if:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\phi\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A\in\mathbb{F}\rightarrow A^{c}\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A,B\in\mathbb{F}\rightarrow A\cup B\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Properties
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\cap B\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\setminus B\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\varDelta B\in\mathbb{F}\iff(A\setminus B)\cup(B\setminus A)\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Additional Properties
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $2\leq|\mathbb{F}|\leq2^{\Omega}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Omega\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A_{i}\in\mathbb{F}:\stackrel[i=1]{n}{\cup}A_{i}\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A_{i}\in\mathbb{F}:\stackrel[i=1]{n}{\cap}A_{i}\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Proofs:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A,B\in\mathbb{F}\overset{D.2}{\implies}A^{C},B^{C}\in\mathbb{F}\overset{D.3}{\implies}A^{C}\cup B^{C}\in\mathbb{F}\overset{D.2}{\implies}(A^{C}\cup B^{C})^{C}=A\cap B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $B\in\mathbb{F}\overset{D.2}{\implies}B^{c}\in\mathbb{F}\overset{P.1}{\implies}A\cap B^{c}\in\mathbb{F}\iff A\setminus B\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\setminus B\in\mathbb{F},B\setminus A\in\mathbb{F}\overset{D.3}{\implies}(A\setminus B)\cup(B\setminus A)\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Examples
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space then
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\{\phi,\Omega\}$
+\end_inset
+
+- is the smallest Algebra
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $P(\Omega)$
+\end_inset
+
+ - is the biggest Algebra
+\end_layout
+
+\begin_layout Subsection
+Intersection of Algebras is an Algebra.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\{\mathbb{F}_{i}\}_{i\in I}$
+\end_inset
+
+ be a family of Algebras on 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ then 
+\begin_inset Formula $\underset{i\in I}{\cap}\mathbb{F}_{i}$
+\end_inset
+
+ is an Algebra.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\phi\in\underset{i\in I}{\cap}\mathbb{F}_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\in\underset{i\in I}{\cap}\mathbb{F}_{i}\implies A^{c}\in\underset{i\in I}{\cap}\mathbb{F}_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A,B\in\underset{i\in I}{\cap}\mathbb{F}_{i}\implies A\cup B\in\underset{i\in I}{\cap}\mathbb{F}_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Algebra generated by a family
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space and 
+\begin_inset Formula $\mathbb{M}$
+\end_inset
+
+ be a family of subgroups of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and let 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ be a group of all algebras on 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ that contains 
+\begin_inset Formula $\mathbb{M}$
+\end_inset
+
+ then 
+\begin_inset Formula $\mathbb{A}(\mathbb{M})=\stackrel[i=1]{n}{\cap}A_{i}$
+\end_inset
+
+ is the smallest Algebra that contains 
+\begin_inset Formula $\mathbb{M}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $\sigma$
+\end_inset
+
+-Algebra
+\end_layout
+
+\begin_layout Subsection
+Definition
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space then 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ is a family of subgroups of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and is called a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-Algebra if and only if:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\phi\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A\in\mathbb{F}\rightarrow A^{c}\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall\{A_{i}\}_{i=1}^{\infty}\in\mathbb{F}\rightarrow\stackrel[i=1]{\infty}{\cup}A_{i}\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Properties
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall\{A_{i}\}_{i=1}^{\infty}\in\mathbb{F}\rightarrow\stackrel[i=1]{\infty}{\cap}A_{i}\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+All properties and defintions on Algebra work on Sigma Algebra.
+\end_layout
+
+\begin_layout Subsection
+Borel Family 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-Algebra
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega=R$
+\end_inset
+
+ and 
+\begin_inset Formula $I_{o}=\{(a,b):a<b,a,b\in\mathbb{R}\}$
+\end_inset
+
+ be all the open intervals then 
+\begin_inset Formula $\mathbb{A_{\sigma}}(I_{O})$
+\end_inset
+
+ the sigma algebra generated by the set of all open intervals is called
+ the Borel Set Family and is denoted 
+\begin_inset Formula $\mathbb{B}(\mathbb{R})$
+\end_inset
+
+ and each subset is called A Borel Set.
+\end_layout
+
+\begin_layout Section
+Limits of series of sets
+\end_layout
+
+\begin_layout Subsection
+Lower limit of a series of sets (Limit Infimum)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(A_{n})_{n=1}^{\infty}$
+\end_inset
+
+be a series of subgroups of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ then:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lim\big[inf(A_{n})\big]=:\{\omega\in\Omega:\exists m>N\rightarrow\omega\in\stackrel[n=m]{\infty}{\cap}A_{n}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lim\big[inf(A_{n})\big]=\stackrel[n=1]{\infty}{\cup}\bigg[\stackrel[m=n]{\infty}{\cap}A_{m}\bigg]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Upper limit of a series of sets (Limit Supremum)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(A_{n})_{n=1}^{\infty}$
+\end_inset
+
+be a series of subgroups of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ then:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lim\big[sup(A_{n})\big]=\stackrel[n=1]{\infty}{\cap}\bigg[\stackrel[m=n]{\infty}{\cup}A_{m}\bigg]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lemmas
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\uparrow(A_{n})_{n=1}^{\infty}\rightarrow lim\big[inf(A_{n})\big]=lim\big[sup(A_{n})\big]=\stackrel[n=1]{\infty}{\cup}A_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\downarrow(A_{n})_{n=1}^{\infty}\rightarrow lim\big[inf(A_{n})\big]=lim\big[sup(A_{n})\big]=\stackrel[n=1]{\infty}{\cap}A_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(A_{n})_{n=1}^{\infty}:\forall i,j\in n:A_{i}\cap A_{j}=\phi\rightarrow lim\big[inf(A_{n})\big]=lim\big[sup(A_{n})\big]=\phi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A series 
+\begin_inset Formula $(A_{n})_{n=1}^{\infty}$
+\end_inset
+
+ converges if and only if 
+\begin_inset Formula $lim\big[inf(A_{n})\big]=lim\big[sup(A_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $lim\big[sup(A_{n})\big]\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Measures
+\end_layout
+
+\begin_layout Subsection
+Definitions
+\end_layout
+
+\begin_layout Subsubsection
+Additivity
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f:M\rightarrow R^{+}\cup\{\infty\}$
+\end_inset
+
+ then 
+\begin_inset Formula $f$
+\end_inset
+
+ is called Additive if 
+\begin_inset Formula $\forall A,B,A\cup B\in M:A\cap B=\phi:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f(A\cup B)=f(A)+f(B)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sigma Additivity (
+\begin_inset Formula $\sigma$
+\end_inset
+
+ Additivity)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f:M\rightarrow R^{+}\cup\{\infty\}:M\subseteq P(\Omega)$
+\end_inset
+
+ then 
+\begin_inset Formula $f$
+\end_inset
+
+ is called Sigma Additive if 
+\begin_inset Formula $\forall(A_{n})_{n=1}^{\infty}\in M:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall i\neq j\rightarrow A_{i}\cap A_{j}=\phi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\stackrel[n=1]{\infty}{\cup}A_{n}\in M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\stackrel[n=1]{\infty}{\sum}f(A_{n})<\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\bigg(\stackrel[n=1]{\infty}{\cup}A_{n}\bigg)=\stackrel[n=1]{\infty}{\sum}f(A_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sub Additivity
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f:M\rightarrow R^{+}\cup\{\infty\}$
+\end_inset
+
+ then 
+\begin_inset Formula $f$
+\end_inset
+
+ is called Sub Additive if 
+\begin_inset Formula $\forall A,B,A\cup B\in M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f(A\cup B)\leq f(A)+f(B)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sigma Sub Additivity (
+\begin_inset Formula $\sigma$
+\end_inset
+
+ Sub Additivity)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f:M\rightarrow R^{+}\cup\{\infty\}:M\subseteq P(\Omega)$
+\end_inset
+
+ then 
+\begin_inset Formula $f$
+\end_inset
+
+ is called Sigma Sub Additive if 
+\begin_inset Formula $\forall(A_{n})_{n=1}^{\infty}\in M:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall i\neq j\rightarrow A_{i}\cap A_{j}=\phi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\stackrel[n=1]{\infty}{\cup}A_{n}\in M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\stackrel[n=1]{\infty}{-\infty<\sum}f(A_{n})<\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\bigg(\stackrel[n=1]{\infty}{\cup}A_{n}\bigg)\leq\stackrel[n=1]{\infty}{\sum}f(A_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Measure Definitions
+\end_layout
+
+\begin_layout Subsubsection
+Measureable Space / Measureable Set
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space and 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ be a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ then:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(\Omega,\mathbb{F})$
+\end_inset
+
+ is called a Measurable Space.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\in\mathbb{F}$
+\end_inset
+
+ is called a Measureable Set.
+\end_layout
+
+\begin_layout Subsubsection
+Measure Space
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(\Omega,\mathbb{F},\mu)$
+\end_inset
+
+ be a Measure Space if:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Omega$
+\end_inset
+
+ - Any set
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb{F\subseteq P}(\Omega)$
+\end_inset
+
+ - 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-Algebra on 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ decides whether a subgroup is measureable or not.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mu:\mathbb{F}\rightarrow R^{+}\cup\{\infty\}$
+\end_inset
+
+ - A measure on 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu$
+\end_inset
+
+ decides the measure of a measurable subgroup.
+\end_layout
+
+\begin_layout Subsubsection
+Infinite Measure
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(\Omega,\mathbb{F})$
+\end_inset
+
+ be a Measureable Space then an infinite measure on 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ is an expanded real valued function defined as:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mu:\mathbb{F}\rightarrow R^{+}\cup\{+\infty\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and has the properties:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mu$
+\end_inset
+
+ assigns non negative values to subsets of 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall A\in\mathbb{F}:\mu(A)\geq0$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mu$
+\end_inset
+
+ assigns ZERO to the empty set
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\mu(\phi)=0$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mu$
+\end_inset
+
+ is Sigma Additive
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall(A_{i})_{n=1}^{\infty}:\forall i,j\in\mathbb{N}_{1},i\neq j:A_{i}\cap A_{j}=\phi\rightarrow\mu\big(\stackrel[n=1]{\infty}{\cup}A_{n}\big)=\stackrel[n=1]{\infty}{\sum}\mu(A_{n})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Finite Measure
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(\Omega,\mathbb{F})$
+\end_inset
+
+ be a Measureable Space then a finite measure on 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+is an expanded real valued function defined as like 3.5.3 with an additional
+ property:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mu(\Omega)<\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Outer Measure / Exterior Measure
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space then an exterior measure is defined as follows:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mu$
+\end_inset
+
+ assigns non negative values to subsets of 
+\begin_inset Formula $\mathbb{P}(\Omega)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\mu^{*}:\mathbb{P}(\Omega)\rightarrow R^{+}\cup\{+\infty\}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mu$
+\end_inset
+
+ assigns ZERO to the empty set
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\mu(\phi)=0$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mu$
+\end_inset
+
+ is Sigma Sub Additive
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall(A_{i})_{n=1}^{\infty}:\forall i,j\in\mathbb{N}_{1},i\neq j:A_{i}\cap A_{j}=\phi\rightarrow\mu\big(\stackrel[n=1]{\infty}{\cup}A_{n}\big)\leq\stackrel[n=1]{\infty}{\sum}\mu(A_{n})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mu$
+\end_inset
+
+ is monotone
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\forall A\subseteq B:\mu^{*}(A)\leq u^{*}(B)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Set Cover
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space and 
+\begin_inset Formula $\mathbb{M}$
+\end_inset
+
+ be a family of subsets of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ then 
+\begin_inset Formula $\mathbb{M}$
+\end_inset
+
+is called a covering set of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ if:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\phi\in\mathbb{M}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\exists(C_{n})_{n=1}^{\infty}:\stackrel[n=1]{\infty}{\bigcup}C_{n}=\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A\subseteq\Omega$
+\end_inset
+
+ then a series 
+\begin_inset Formula $(C_{n})_{n=1}^{\infty}$
+\end_inset
+
+ covers 
+\begin_inset Formula $A$
+\end_inset
+
+ if 
+\begin_inset Formula $A\subseteq\stackrel[n=1]{\infty}{\bigcup}C_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Lebesgue Outer Measure
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega=\mathbb{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $I_{o}=\{(a,b):a,b\in\mathbb{R},a\leq b\}$
+\end_inset
+
+ is a covering set for 
+\begin_inset Formula $\mathbb{R},l\big[(a,b)\big]=b-a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall E\subseteq\mathbb{R\rightarrow}T_{E}=\bigg\{\stackrel[n=1]{\infty}{\sum}l\big(C_{n}\big):(C_{n})_{n=1}^{\infty}$
+\end_inset
+
+ covers 
+\begin_inset Formula $E\bigg\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\lambda^{*}(E)=inf[T_{E}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Translation of subsets
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $E\subseteq\mathbb{R},\gamma\in\mathbb{R}$
+\end_inset
+
+ then
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E=\{x|x\in E\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E+\gamma=\{x+\gamma|x\in E\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+From outer measure to a measure
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\mu^{*}$
+\end_inset
+
+- Measurable set
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ be a space then the subset 
+\begin_inset Formula $E\subseteq\Omega$
+\end_inset
+
+ is Measurable with respect to an outer measure (
+\begin_inset Formula $\mu^{*}$
+\end_inset
+
+- Measurable) if and only if
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall A\subseteq\Omega:\mu^{*}(A)=\mu^{*}(A\cap E)+\mu^{*}(A\cap E^{C})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Measurable function
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(\Omega,\mathbb{F})$
+\end_inset
+
+ and 
+\begin_inset Formula $(\mathbb{R},\mathbb{B})$
+\end_inset
+
+ be Measurable spaces and 
+\begin_inset Formula $f:\Omega\rightarrow\mathbb{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $(\Omega,\mathbb{F})$
+\end_inset
+
+ - Measurable 
+\begin_inset Formula $\iff\forall\alpha\in\mathbb{R}\rightarrow\{\omega\in\Omega:f(\omega)\leq\alpha\}\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $(\Omega,\mathbb{F})$
+\end_inset
+
+ - Measurable 
+\begin_inset Formula $\iff\forall\alpha\in\mathbb{R}\rightarrow f^{-1}\bigg[(-\infty,\alpha]\bigg]\in\mathbb{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We denote 
+\begin_inset Formula $f:(\Omega,\mathbb{F})\rightarrow(\mathbb{R},\mathbb{B})$
+\end_inset
+
+ to emphasize the dependency on the Sigma Algebras.
+\end_layout
+
+\end_body
+\end_document

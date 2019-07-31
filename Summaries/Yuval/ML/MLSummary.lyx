@@ -645,7 +645,7 @@ Measures:
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $L_{(\mathbb{D},f)}(h)=\mathbb{P}_{(x,y)\sim\mathbb{D}}[h(x)\neq y]$
+\begin_inset Formula $L_{\mathbb{D}}(h)=\mathbb{P}_{(x,y)\sim\mathbb{D}}[h(x)\neq y]$
 \end_inset
 
  - a measure of error for the predictor on the real data.
@@ -983,6 +983,69 @@ A hypothesis class
 \end_layout
 
 \end_deeper
+\begin_layout Subsection
+Non Uniform Learnability
+\end_layout
+
+\begin_layout Subsubsection
+Comptitiveness
+\end_layout
+
+\begin_layout Standard
+A hypothesis 
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ is 
+\begin_inset Formula $(\epsilon,\delta)-competitive$
+\end_inset
+
+ with 
+\begin_inset Formula $h_{j}$
+\end_inset
+
+ if 
+\begin_inset Formula $P\bigg[L_{D}(h_{i})\leq L_{D}(h_{j})+\epsilon\bigg]\geq1-\delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Learnbility
+\end_layout
+
+\begin_layout Standard
+A hypothesis class 
+\begin_inset Formula $H$
+\end_inset
+
+ is nonuniformly learnable if there exists a function 
+\begin_inset Formula $m_{H}:(0,1)^{2}\times H\rightarrow\mathbb{N}$
+\end_inset
+
+, a learning algorithm 
+\begin_inset Formula $A$
+\end_inset
+
+, an unknown distribution 
+\begin_inset Formula $\mathbb{D}_{(x,y)}$
+\end_inset
+
+ and an I.I.D Sample Space 
+\begin_inset Formula $S$
+\end_inset
+
+ such that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta,h)\rightarrow\mathbb{P}\big[L_{\mathbb{D}}(A(S))\leq L_{\mathbb{D}}(h)\big]+\epsilon\big]>1-\delta$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 There Is No Universal Learner (No Free Lunch Theorem)
 \end_layout
