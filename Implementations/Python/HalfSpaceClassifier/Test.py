@@ -62,7 +62,7 @@ plt.plot(ls,LinearSeparator(Wlp,Wlp[2],ls),label='Linear Programming')
 plt.plot(ls,LinearSeparator(Wp,Wp[2],ls),label='Perceptron')
 
 # Plot the Stochastic Gradient Descent solution
-plt.plot(ls,LinearSeparator(Wsgd[0],Wsgd[1],ls),label='SGD')
+plt.plot(ls,LinearSeparator(Wsgd,Wsgd[2],ls),label='SGD')
 
 plt.legend(loc='upper left')
 plt.xlabel("X1")
