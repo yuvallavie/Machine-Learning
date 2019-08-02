@@ -56,5 +56,5 @@ plt.title("Logistic Regression")
 # Prepare the linear space
 ls = np.linspace(np.min(X),np.max(X));
 
-# Plot the Linear Programming solution
+# Plot the Logistic Regression solution
 plt.plot(ls,LinearSeparator(W,W[2],ls),label='Logistic Regression')
