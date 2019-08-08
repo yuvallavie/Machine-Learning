@@ -730,7 +730,7 @@ A series
 \end_inset
 
  converges if and only if 
-\begin_inset Formula $lim\big[inf(A_{n})\big]=lim\big[sup(A_{n})$
+\begin_inset Formula $lim\big[inf(A_{n})\big]=lim\big[sup(A_{n})\big]$
 \end_inset
 
 
