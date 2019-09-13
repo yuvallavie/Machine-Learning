@@ -136,6 +136,14 @@ Tom Mitchell - A computer program is said to learn from experience
 
 \end_layout
 
+\begin_layout Subsection
+Distribution-Free Learning
+\end_layout
+
+\begin_layout Subsection
+Parametric Density Estimation
+\end_layout
+
 \begin_layout Part
 Learning
 \end_layout
@@ -645,7 +653,7 @@ Measures:
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $L_{(\mathbb{D},f)}(h)=\mathbb{P}_{(x,y)\sim\mathbb{D}}[h(x)\neq y]$
+\begin_inset Formula $L_{\mathbb{D}}(h)=\mathbb{P}_{(x,y)\sim\mathbb{D}}[h(x)\neq y]$
 \end_inset
 
  - a measure of error for the predictor on the real data.
@@ -1078,10 +1086,6 @@ Every finite hypothesis class enjoys the Uniform Convergence property with
 \begin_inset Formula $m_{H}^{UC}(\epsilon,\delta)\leq\left\lceil \dfrac{log(2|H|/\delta)}{2\epsilon^{2}}\right\rceil $
 \end_inset
 
-
-\end_layout
-
-\begin_layout Enumerate
 
 \end_layout
 

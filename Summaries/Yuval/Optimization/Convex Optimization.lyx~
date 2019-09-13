@@ -88,7 +88,11 @@ Formality
 \end_layout
 
 \begin_layout Standard
-A mathematical optimization problem has the following form:
+A 
+\shape italic
+mathematical optimization
+\shape default
+ problem has the following form:
 \end_layout
 
 \begin_layout Standard
@@ -120,7 +124,7 @@ minimize
 
 \begin_layout Plain Layout
 subject to 
-\begin_inset Formula $\forall i\in[m]:f_{i}(x)\leq b_{i}$
+\begin_inset Formula $f_{i}(x)\leq b_{i},\forall i\in[1,m]$
 \end_inset
 
 
@@ -159,7 +163,7 @@ where
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $x^{*}=\{argmin_{x\in X}f(x):X=:\{x|\forall i\in[m]:f_{i}(x)\leq b_{i}\}\}$
+\begin_inset Formula $x^{*}=\{argmin_{x\in X}f(x):X=:\{x|\forall i\in[1,m]:f_{i}(x)\leq b_{i}\}\}$
 \end_inset
 
  - Out of all the input vectors who satisfy the constraints, 
@@ -179,8 +183,11 @@ Linear Programming
 \end_layout
 
 \begin_layout Standard
-A mathematical optimization problem is called Linear Programming if it has
- the following form
+A mathematical optimization problem is called a 
+\shape italic
+Linear Program
+\shape default
+ if it has the following form
 \end_layout
 
 \begin_layout Standard
@@ -204,7 +211,7 @@ status open
 
 \begin_layout Plain Layout
 minimize 
-\begin_inset Formula $\langle\alpha_{0},x\rangle$
+\begin_inset Formula $f_{0}(x)$
 \end_inset
 
 
@@ -212,7 +219,7 @@ minimize
 
 \begin_layout Plain Layout
 subject to 
-\begin_inset Formula $\forall i\in[m]:\langle\alpha_{i},x\rangle\leq b_{i}$
+\begin_inset Formula $f_{i}(x)\leq b_{i},\forall i\in[1,m]$
 \end_inset
 
 
@@ -230,7 +237,7 @@ where
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $\forall i\in[m]:f_{i}(\alpha_{1}x+\alpha_{2}x)=\alpha_{1}f_{i}(x)+\alpha_{2}f_{i}(x)$
+\begin_inset Formula $\forall i\in[m]:f_{i}(\alpha_{1}x_{1}+\alpha_{2}x_{2})=\alpha_{1}f_{i}(x_{1})+\alpha_{2}f_{i}(x_{2})$
 \end_inset
 
  - all functions in the problem are linear
@@ -242,11 +249,181 @@ where
 \end_layout
 
 \begin_layout Section
-Quadratic Programming
+Convex Optimization
+\end_layout
+
+\begin_layout Standard
+A mathematical optimization problem is called a 
+\shape italic
+Convex Optimization Problem
+\shape default
+ if it has the following form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+minimize 
+\begin_inset Formula $f_{0}(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+subject to 
+\begin_inset Formula $f_{i}(x)\leq b_{i},\forall i\in[1,m]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+where
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $x\in\mathbb{R}^{n}$
+\end_inset
+
+ - The optimization variable
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall i\in[m],\forall\alpha_{1}\geq0,\forall\alpha_{2}\geq0,\alpha_{1}+\alpha_{2}=1:f_{i}(\alpha_{1}x_{1}+\alpha_{2}x_{2})\leq\alpha_{1}f_{i}(x_{1})+\alpha_{2}f_{i}(x_{2})$
+\end_inset
+
+ - all functions in the problem are convex
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Convex Optimization
+Expressing problems in the standard form
+\end_layout
+
+\begin_layout Subsection
+Box Constraints
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+minimize 
+\begin_inset Formula $f_{0}(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+subject to 
+\begin_inset Formula $\alpha_{i}\leq x_{i}\leq\beta_{i},\forall i\in[1,m]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\iff$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+minimize 
+\begin_inset Formula $f_{0}(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+subject to
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\alpha_{i}\leq x_{i}\iff\alpha_{i}-x_{i}\leq0,\forall i\in[1,m]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $0\leq\beta_{i}-x_{i}\iff\beta_{i}-x_{i}\leq0,\forall i\in[1,m]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+or
+\end_layout
+
+\begin_layout Plain Layout
+subject to 
+\begin_inset Formula $f_{i}(x)\leq0,\forall i\in[1,2m]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+where 
+\begin_inset Formula $f_{i}(x)=\begin{cases}
+\alpha_{i}-x_{i} & i\leq m\\
+\beta_{i}-x_{i} & i>m
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
