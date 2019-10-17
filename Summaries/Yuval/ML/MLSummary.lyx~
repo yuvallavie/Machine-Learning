@@ -137,11 +137,27 @@ Tom Mitchell - A computer program is said to learn from experience
 \end_layout
 
 \begin_layout Subsection
-Distribution-Free Learning
+Distribution-Free Learning (Discriminative)
+\end_layout
+
+\begin_layout Standard
+In this approach we do not impose any assumptions on the underlying distribution
+ over the data.
+ we follow a discriminative approach in which our goal is not to learn the
+ underlying distribution but rather to learn an accurate predictor.
+ of course if we could learn the underlying distribution, we would use the
+ bayes optimal predictor to generate predictions.
 \end_layout
 
 \begin_layout Subsection
-Parametric Density Estimation
+Parametric Density Estimation (Generative)
+\end_layout
+
+\begin_layout Standard
+In this approach we assume that the data's distribution belongs to a specific
+ family and we do not know the parameters.
+ we try to estimate those parameters and make predictions using the bayes
+ predictor.
 \end_layout
 
 \begin_layout Part
@@ -771,31 +787,55 @@ A hypothesis class
 \begin_inset Formula $H$
 \end_inset
 
- is PAC learnable if there exists a function 
+ is PAC learnable if there exists:
+\end_layout
+
+\begin_layout Enumerate
+A sample complexity function 
 \begin_inset Formula $m_{H}:(0,1)^{2}\rightarrow\mathbb{N}$
 \end_inset
 
-, a learning algorithm 
-\begin_inset Formula $A$
+
+\end_layout
+
+\begin_layout Enumerate
+A learning algorithm 
+\begin_inset Formula $\mathbb{A}$
 \end_inset
 
-, an unknown distribution 
+
+\end_layout
+
+\begin_layout Enumerate
+An unknown data generation distribution 
 \begin_inset Formula $\mathbb{D}$
 \end_inset
 
- and a realizable true labeling function 
+
+\end_layout
+
+\begin_layout Enumerate
+A labeling fuction 
 \begin_inset Formula $f:X\rightarrow Y$
 \end_inset
 
- and an I.I.D sample space 
+
+\end_layout
+
+\begin_layout Enumerate
+An Independent Identically Distributed sample space 
 \begin_inset Formula $S$
 \end_inset
 
- such that:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta)\rightarrow\mathbb{P}\big[L_{(\mathbb{D},f)}(A(S))\leq\epsilon\big]>1-\delta$
+Such that :
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1),\forall\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta)\rightarrow\mathbb{P}\big[L_{(\mathbb{D},f)}(\mathbb{A}(S))\leq\epsilon\big]>1-\delta$
 \end_inset
 
 
@@ -803,6 +843,57 @@ A hypothesis class
 
 \begin_layout Subsection
 Agnostic PAC Learning
+\end_layout
+
+\begin_layout Standard
+A hypothesis class 
+\begin_inset Formula $H$
+\end_inset
+
+ is agnostic PAC learnable if there exists
+\end_layout
+
+\begin_layout Enumerate
+A sample complexity function 
+\begin_inset Formula $m_{H}:(0,1)^{2}\rightarrow\mathbb{N}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A learning algorithm 
+\begin_inset Formula $\mathbb{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+An unknown data and label generating distribution 
+\begin_inset Formula $\mathbb{D}_{(X,Y)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+An Independent Identically Distributed sample space 
+\begin_inset Formula $S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Such that :
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall\epsilon,\delta\in(0,1)\forall\mathbb{D}:\left|S\right|>m_{H}(\epsilon,\delta)\rightarrow\mathbb{P}\big[L_{\mathbb{D}}(A(S))\leq min_{h\in H}\big[L_{\mathbb{D}}(h)\big]+\epsilon\big]>1-\delta$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1149,8 +1240,8 @@ Learner's Success -
 \begin_inset Formula $m_{H}(\epsilon,\delta)$
 \end_inset
 
- - function that returns the number of I.I.D samples required to learn a predictor
- with accuracy 
+ - function that returns the minimal number of I.I.D samples required to learn
+ a predictor with accuracy 
 \begin_inset Formula $\epsilon$
 \end_inset
 
