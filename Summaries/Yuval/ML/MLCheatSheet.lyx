@@ -436,7 +436,7 @@ Logistic Loss
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+SGD
 \end_layout
 
 \end_inset
@@ -504,7 +504,7 @@ Surrogate: Hinge Loss
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+SGD
 \end_layout
 
 \end_inset
