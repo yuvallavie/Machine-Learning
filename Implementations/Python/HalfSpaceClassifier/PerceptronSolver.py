@@ -11,16 +11,18 @@ def Solve(x_train,y_train):
     N = len(X);
     # Set weights to all zeros
     W = np.zeros(len(X[0]));
+    # since Perceptron convergeces we use a while loop
     flag = True;
-    #for t in range(10):
-    iterations = 0;
+    epochs = 0;
+    updates = 0;
     while(flag):
-        iterations += 1;
+        epochs += 1;
         flag = False;
         for i in range(N):
             ans = np.dot(W,X[i])*Y[i];
             if(ans <= 0):
                 flag = True
                 W += np.dot(Y[i], X[i])
-    print("Perceptron terminated successfully\nIterations:",iterations )
+                updates += 1;
+    print(f"Perceptron terminated successfully after {epochs} epochs and {updates} updates with result W = {W}")
     return W;
